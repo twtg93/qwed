@@ -1,0 +1,177 @@
+body {
+    background: #000;
+    margin:0px;
+    padding:0px;
+    color:#f1f1f1;
+    font-family:arial;
+    overflow:hidden;
+}
+#container {
+    background:#000;
+    width:1024px;
+    min-height:500px;
+    margin: auto;
+    padding:0px;
+    padding-top:75px;
+}
+table {
+    border-top:1px solid #000;
+    border-left:1px solid #000;
+}
+td {
+    border-bottom:1px solid #000;
+    border-right:1px solid #000;
+}
+#canvas {
+    position:absolute;
+}
+#splashScreen, #filePrompt, #loadingScreen, #canvas, #background {
+    width:1024px;
+    height:600px;
+}
+#splashScreen {
+    background:url(../img/splash.jpg);
+    background-size:100% 100%;
+    color:#f1f1f1;
+    position:absolute;
+}
+#logo {
+    position:absolute;
+    right:100px;
+    top:225px;
+}
+#filePrompt {
+    background-repeat: repeat;
+    background-attachment:fixed;
+    background:url(../img/fade.png),url(../img/fg.png),url(../img/mg.png),url(../img/bg.png),url(../img/background.jpg);
+    background-size:8px 8px, 600px 600px, 300px 300px, 300px 300px, 100% 100%;
+    -webkit-animation: bg 30s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+@-webkit-keyframes bg {
+    0%
+    {
+        background-position: 0px 0px, 1800px 1800px, 900px 900px, 600px 600px, 0px 0px;
+    }
+    100%
+        {
+        background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    }
+}
+#loadingScreen {
+    background:url(../img/background.jpg);
+    background-size:100% 100%;
+}
+#filePrompt, #loadingScreen {
+    opacity:0;
+    color:#f1f1f1;
+    position:absolute;
+}
+table, tr, td, th {
+    border:0px;
+}
+th {
+    border-bottom:1px solid #fff;
+}
+#filePrompt input {
+    color:#f1f1f1;
+}
+h2 {
+    margin-bottom:5px;
+}
+img {
+    margin:17px;
+}
+a {
+    color:#fff;
+}
+#loadingIcon {
+    position:absolute;
+    bottom:15px;
+    right:15px;
+}
+input {
+    color:#000 !important;
+}
+progress {
+    width:600px;
+}
+#song1 {
+    border:1px solid #000;
+}
+#tips {
+    width:900px;
+}
+#files {
+    height:0px;
+    width:0px;
+    overflow:hidden;
+}
+#uploadbtn, #btn {
+    border:1px solid #000;
+}
+#canvas {
+    display:none;
+    opacity:0;
+}
+#menuContainer {
+    padding:30px;
+    width:600px;
+}
+#accordion {
+    margin-top:0px;
+}
+.collapsibleContainer div{
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.collapsibleContainer {
+    border:solid 1px #a51313;
+    width:600px;
+    margin-left:25px;
+    background:#1f1f1f;
+}
+.collapsibleContainerTitle {
+    cursor:pointer;
+}
+.collapsibleContainerTitle div {
+    padding:5px;
+    padding-left:10px;
+    background-color:#a51313;
+    color:#fff;
+    width:585px;
+}
+.collapsibleContainerContent {
+    font-size:12px;
+    padding:0px;
+    height:55%;
+}
+.pad {
+    padding:10px;
+}
+#albumArt {
+    opacity:0;
+    position: absolute;
+    right: 7px;
+    top: 120px;
+    width: 325px;
+}
+#musicSelection tr td input{
+    font-size:10px;
+    cursor:pointer;
+}
+#musicSelection tr th{
+    font-size:12px;
+    padding:0px;
+    margin:0px;
+    border:none;
+}
+#musicSelection tr td{
+    background:#1f1f1f;
+    font-size:10px;
+    text-align:center;
+}
+.menuHover:hover {
+    background:#DB8181;
+}
