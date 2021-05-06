@@ -1,0 +1,149 @@
+
+<html>
+    <head>
+        <title>Qwed</title>
+        <link rel="stylesheet" type="text/css" href="./assets/css/mainStyle.css" />
+        <script type='text/javascript' src='./assets/js/jquery.js'></script>
+        <script type='text/javascript' src='./assets/js/music.js'></script>
+        <script type='text/javascript' src='./assets/js/game.js'></script>
+        <script type='text/javascript'>
+            function showAlbumArt(src) {
+                $('#albumArt').attr('src',src);
+                $('#albumArt').stop(true, false).animate({opacity:1},750);
+            }
+            function hideAlbumArt() {
+                $('#albumArt').stop(true, false).animate({opacity:0},750);
+            }
+        </script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-34554503-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body onmouseover='resetDemoMode()' onkeypress='resetDemoMode()'>
+        <div id='container'>
+
+            <div id='loadingScreen'>
+                <center>
+                    <br>
+                    <h2>Qwed</h2>
+                    <small>By: ThatWeirdTechGuy</small><br>
+                    <img src='./assets/img/logo.gif' /><br><br>
+                    <div id='tips'></div>
+                    <br><br>
+                    <progress id='musicProgress' value='0' max='100'></progress>
+                    <div id='loadingIcon'><br><br>
+                        <img src='./assets/img/loading.gif' />
+                    </div>
+                </center>
+            </div>
+
+            <div id='filePrompt'>
+                <center>
+                    <h1>Qwed</h1>
+                </center>
+
+                <div id='menuContainer'>
+                    <div id='accordion'>
+                        <div rel='How To Play' class='collapsibleContainer first'>
+                            <div class='pad'>
+                                <li>Use the Left, Up, and Right Arrows to hit the Qwed Beats as they come down!</li>
+                                <li>To view your rank, Press Escape at any time.</li>
+                            </div>
+                        </div>
+
+                        <div rel='Options' class='collapsibleContainer'>
+                            <div class='pad'>
+                                <table>
+                                    <tr>
+                                        <td>Difficulty:</td>
+                                        <td>
+                                            <select id='difficulty' onchange='changeSettings();'>
+                                                <option value='1.05'>Expert</option>
+                                                <option value='1.1'>Hard</option>
+                                                <option value='1.15'>Medium</option>
+                                                <option value='1.2' selected>Normal</option>
+                                                <option value='1.3'>Easy</option>
+                                                <option value='1.4'>Novice</option>
+                                                <option value='1.5'>Beginner</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Speed: </td>
+                                        <td>
+                                            <select id='speed' disabled onchange='changeSettings();'>
+                                                <option value='4'>Lightning</option>
+                                                <option value='2'>Fast</option>
+                                                <option value='1.5'>Medium</option>
+                                                <option value='1' selected>Normal</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div rel='Song Selection' class='collapsibleContainer'>
+                            <div>
+                                <table width='584px' cellspacing=10 id='musicSelection'>
+                                    <tr>
+                                        <th width='292px'>Menu</th>
+                                    </tr>
+                                    <tr onmouseout='hideAlbumArt()'>
+                                        <td>
+                                            <input id='btn' type='button' value='Preamble' onmouseover='showAlbumArt("https://yt3.ggpht.com/ytc/AAUvwnihmLqdXuExTk7TdjYWy45hnmImHpgIqI8h7N6_=s88-c-k-c0x00ffffff-no-rj")' onclick='downloadSong("./music/menu/pramble.ogg");'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div rel='Credits' class='collapsibleContainer'>
+                            <div class='pad'>
+                                Created By: ThatWeirdTechGuy<br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <img id='logo' src='./assets/img/logo.gif' />
+
+                <img id='albumArt' src='./music/theformer/albumart.jpg' />
+
+                <input type="file" id="files" accept="audio" multiple />
+
+            </div>
+
+            <div id='splashScreen'>
+                <center>
+                    <br>
+                    <h2>Qwed</h2>
+                    <small>By: ThatWeirdTechGuy</small><br>
+                    <img src='./assets/img/preload.gif' />
+                    <br><br>
+                    Now Open Source!<br><br><br>
+                    <progress id='initProgress' value='0' max='100'></progress>
+            </div>
+
+            <center>
+                <canvas id='canvas' width='1024px' height='600px' ></canvas>
+                <canvas id='background' style='background:#000000;' width='1024px' height='600px' >
+                    Sorry, Your Browser does not support the Canvas Element needed to play.
+                </canvas>
+            </center>
+        </div>
+        <center>
+            <small>
+                Qwed is open source!<br>
+                Check out Qwed's GitHub at github.com/TWTG93
+            </small>
+        </center>
+    </body>
+</html>
